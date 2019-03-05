@@ -1,10 +1,7 @@
-* {
+  body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto';
-  }
-  
-  body{
     background: rgb(230, 230, 230);
   }
 
@@ -20,4 +17,10 @@
 
   input{
     height: 22px;
+  }
+
+  .newsItem{
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid grey;
   }

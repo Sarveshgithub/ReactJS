@@ -11,8 +11,8 @@ class Header extends Component {
     }
     //onchange events
     onchange(event) {
-        this.setState({ keywords: event.target.value })
-        console.log('values::', event.target.value);
+        this.setState({ keywords: event.target.value });
+        this.props.searchStr(event.target.value);
     }
     //render functions
     render() {
@@ -22,10 +22,6 @@ class Header extends Component {
                     Logo
                 </div>
                 <input onChange={this.onchange.bind(this)} />
-                <div>
-                    {this.state.title}
-                    {this.state.keywords}
-                </div>
             </header>
         )
     }
