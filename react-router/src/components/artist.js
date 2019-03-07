@@ -1,31 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import Header from './header'
+// REQUESTS URL
+const URL_ARTIST = 'http://localhost:3004/artists'
 
+class Home extends Component {
+    constructor(props) {
+        console.log(props)
+        super(props)
 
-const ArtistsList = (props) => {
-
-    const list = ({ allArtists }) => {
-        if (allArtists) {
-            console.log(allArtists)
-            return allArtists.map(function (item) {
-                const stlyes = {
-                    background: `url('./images/covers/${item.cover}.jpg') no-repeat`
-                }
-                return (
-                    <Link key={item.id} to={`/artist/${item.id}`} className="artist_item" style={stlyes}>
-                        <div>{item.name}</div>
-                    </Link>
-                )
-            })
+        this.state = {
+            artists: ''
         }
     }
 
-    return (
-        <div className="artists_list">
-            <h4>Browse the artists</h4>
-            {list(props)}
-        </div>
-    )
+    componentDidMount() {
+        fetch(URL_ARTIST, {
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(json => {
+                this.setState({ artists: json })
+            })
+    }
+
+
+    render() {
+        return (
+            <div>
+                <Header />
+                Hello artist
+            </div>
+        )
+    }
 }
 
-export default ArtistsList;
+export default Home;
