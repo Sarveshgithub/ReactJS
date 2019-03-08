@@ -1,0 +1,11 @@
+install react 
+    npm install -g create-react-app
+    create-react-app .
+
+start server 
+    npm start
+
+react router
+    npm install react-router-dom@4.3.1 --save
+    
+            
