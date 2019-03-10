@@ -10,10 +10,16 @@ react router
 
 JSON Server
     npm install -g json-server  
-    
+
 run JSON server  
     json-server --watch db.json --port 3004    
     
 react slick
-    npm install react-slick --save    
+    npm install react-slick --save   
+
+react reveal
+    npm install react-reveal animate.css --save
+
+transition 
+    npm install react-transition-group@1.x --save  
             
