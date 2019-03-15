@@ -13,11 +13,14 @@ const settings = {
 const generateSlides = ({slides}) => {
     if(slides){
         console.log(slides)
+        
          return (
             <Slider {...settings}>
                 {slides.map(function(item){
+                    console.log({background:`url(/images/covers/${item.cover})`})
                     return (
-                        <div key={item.id} className="item_slider" 
+                        
+                        <div key={item.id}  
                             style={{background:`url(/images/covers/${item.cover})`}}>
                             <div className="caption">
                                 <h4>{item.topic}</h4>
