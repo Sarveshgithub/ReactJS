@@ -18,7 +18,7 @@ const generateSlides = ({slides}) => {
                 {slides.map(function(item){
                     return (
                         <div key={item.id} className="item_slider" 
-                            style={{background:`url(../public/images/covers/${item.cover})`}}>
+                            style={{background:`url(/images/covers/${item.cover})`}}>
                             <div className="caption">
                                 <h4>{item.topic}</h4>
                                 <p>{item.title}</p>
