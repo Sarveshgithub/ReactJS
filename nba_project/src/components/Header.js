@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 const Header = () => {
-    return (
+    return(
         <header>
             <div className="flexbox-container">
                 <Link to="/" className="logo">
@@ -15,4 +16,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;

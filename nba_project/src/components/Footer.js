@@ -1,14 +1,15 @@
 import React from 'react';
+
 const Footer = () => {
     return (
-        <footer>
+         <footer>
             <div className="flexbox-container">
-               <div className="logo">
+                <div className="logo">
                     <span></span>
-               </div>
+                </div>
             </div>
         </footer>
     )
 }
 
-export default Footer
+export default Footer;

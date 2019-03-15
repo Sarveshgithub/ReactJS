@@ -1,28 +1,44 @@
-import React, { Component } from 'react'
-//Components
-import Featured from './featured'
-const URL_HOME = 'http://localhost:3004/home'
+import React,{ Component } from 'react';
+
+// COMPONENTS
+import Featured from './featured';
+import Subscriptions from './subscriptions';
+import Blocks from './blocks';
+import Poll from './poll';
+
+const URL_HOME = 'http://localhost:3004/home';
+
 class Home extends Component {
-    constructor(props) {
+    constructor(props){
         super(props)
+
         this.state = {
-            home: ''
+            home:'',
+            poll:[]
         }
     }
+
     componentDidMount() {
-        fetch(URL_HOME, { method: 'GET' })
-            .then(response => response.json())
-            .then(json => {
-                this.setState({ home: json });
-            })
+        fetch(URL_HOME, { method: 'GET'})
+        .then(response => response.json())
+        .then(json => {
+            this.setState({home:json})
+        })
     }
-    render() {
-        return (
+
+
+    render(){
+        return(
             <div>
                 <Featured slides={this.state.home.slider}/>
+                <Subscriptions/>
+                <Blocks blocks={this.state.home.blocks}/>
+                <Poll/>
             </div>
+   
         )
     }
 }
 
-export default Home
+
+export default Home;
